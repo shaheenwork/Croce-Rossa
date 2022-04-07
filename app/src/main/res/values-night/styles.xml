@@ -1,0 +1,98 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:isLightTheme">false</item>
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+        <item name="colorAccent">@color/darkGrey</item>
+    </style>
+
+    <style name="TransparentProgressDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="progressbar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:colorControlActivated">@color/colorAccent</item>
+
+    </style>
+
+    <style name="ThemeOverlay.BottonNavView" parent="">
+
+        <item name="colorPrimary">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
+
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:background">@color/colorTextDark</item>
+        <item name="textColorAlertDialogListItem">@color/colorAccent</item>
+        <item name="android:textColorAlertDialogListItem">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/login_page_text_small</item>
+        <item name="android:windowTitleStyle">@style/dialog_title</item>
+
+        <item name="android:paddingLeft">?dialogPreferredPadding</item>
+        <item name="android:itemTextAppearance">@style/dialog_item</item>
+
+
+
+    </style>
+
+
+    <style name="dialog_item" >
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingLeft">?dialogPreferredPadding</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">@dimen/login_page_text_small</item>
+    </style>
+
+    <style name="dialog_title" parent="dialog_windowtitle">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/login_page_text_small</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+    </style>
+
+    <style name="dialog_windowtitle" >
+
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollHorizontally">true</item>
+
+
+
+    </style>
+
+   <!-- <style name="AlertSmallText" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/colorAccent</item>
+
+    </style>-->
+
+
+    <style name="SelectionSwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/darkGrey</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/darkGrey</item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/darkGrey</item>
+    </style>
+
+</resources>

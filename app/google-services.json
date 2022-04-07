@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "386592477981",
+    "project_id": "croce-rossa-e9d82",
+    "storage_bucket": "croce-rossa-e9d82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:386592477981:android:27927dd15c822dcf2047f4",
+        "android_client_info": {
+          "package_name": "com.gruppozenit.crocerossa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "386592477981-e8ajm6gmk3bl71c4tkrs25ucphrbi9au.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDYqM9m_dnRHXiA66ADASBWl57dvxkiYk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "386592477981-e8ajm6gmk3bl71c4tkrs25ucphrbi9au.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "386592477981-38q6dih5438rltbj8afhgg0defma6jgu.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.gruppozenit.crocerossa"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

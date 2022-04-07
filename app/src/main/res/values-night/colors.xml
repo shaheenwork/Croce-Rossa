@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000</color>
+    <color name="colorPrimaryDark">#000</color>
+    <color name="colorAccent">#CC0000</color>
+    <color name="colorBlue">#0b1c48</color>
+    <color name="darkGrey">#fff</color>
+    <color name="colorTextWhiteGrey">#fff</color>
+    <color name="colorText">#CC0000</color>
+    <color name="colorBG">#000</color>
+    <color name="colorTextLight">#676767</color>
+    <color name="colorTextDark">#fff</color>
+    <color name="colorLightGrey">#171717</color>
+    <color name="colorBorder">#CC0000</color>
+    <color name="colorEditTextBorder">#7E7E7E</color>
+    <color name="colorBlueLink">#0850C9</color>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:background="@drawable/shape_unread_msg"
+    android:gravity="center_vertical"
+    android:weightSum="3"
+    android:paddingEnd="@dimen/item_file_padding_end"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/img_file_type"
+        android:layout_width="0dp"
+        android:layout_gravity="center_vertical"
+        android:adjustViewBounds="true"
+        android:layout_weight=".55"
+        android:scaleType="centerInside"
+        android:layout_height="@dimen/item_file_image_height"
+        android:src="@drawable/pdf"
+
+        />
+
+    <TextView
+        android:id="@+id/txt_filename"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_marginEnd="@dimen/item_file_text_margin"
+        android:maxLines="4"
+        android:textAlignment="textStart"
+        android:ellipsize="end"
+        android:fontFamily="@font/raleway_regular"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:textSize="@dimen/item_file_text_small"
+        android:textColor="@color/colorTextLight"
+        android:layout_weight="1.7"/>
+
+        <Button
+            android:id="@+id/btn_apri"
+            android:layout_width="0dp"
+            android:adjustViewBounds="true"
+            android:layout_height="@dimen/item_apribtn_height"
+            android:textAllCaps="true"
+            android:layout_weight="0.7"
+            android:textSize="@dimen/item_file_text_small"
+            android:fontFamily="@font/itcerasstd_bold"
+            android:background="@drawable/buttonorange"
+            android:text="@string/label_apri"
+            android:textColor="@color/colorText"/>
+
+
+
+</LinearLayout>

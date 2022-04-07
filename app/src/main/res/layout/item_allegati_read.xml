@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:background="@color/colorLightGrey"
+    android:id="@+id/view_item"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="7dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_width="wrap_content"
+        android:background="@color/colorLightGrey"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:paddingTop="@dimen/message_item_padding"
+        android:paddingBottom="@dimen/message_item_padding"
+        android:paddingStart="@dimen/message_item_padding"
+        android:paddingEnd="@dimen/message_item_padding"
+        >
+
+        <ImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/type_image"
+            android:layout_width="@dimen/item_file_image_height"
+            android:elevation="@dimen/message_item_propic_elevation"
+            android:src="@drawable/pdf"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:tint="@color/colorTextWhiteGrey"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+
+             />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="top"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/txt_allegati_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Test Test"
+                android:lines="1"
+                android:layout_alignParentStart="true"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/colorTextWhiteGrey"
+                android:textSize="@dimen/message_item_text_large"/>
+
+            <RelativeLayout
+
+                android:id="@+id/namedate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+
+                <RelativeLayout
+                    android:id="@+id/lyt"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal"
+                    android:gravity="top"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/txt_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Test Test"
+                        android:lines="1"
+                        android:ellipsize="end"
+                        android:layout_alignParentStart="true"
+                        android:includeFontPadding="false"
+                        android:layout_alignLeft="@+id/txt_date"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textColor="@color/colorTextWhiteGrey"
+                        android:textSize="@dimen/message_item_text_small"/>
+                    <TextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="wrap_content"
+                        android:text="11/11/2020"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:layout_height="wrap_content"
+                        android:includeFontPadding="false"
+                        android:textAlignment="viewEnd"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/colorTextWhiteGrey"
+                        android:textSize="@dimen/message_item_text_small" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/msg_devider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/colorTextWhiteGrey"
+        />
+
+
+</LinearLayout>

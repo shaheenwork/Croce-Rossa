@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".login.LoginWaitActivity">
+
+    <include
+        android:id="@+id/logo"
+        layout="@layout/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_marginTop="20dp"
+        app:layout_constraintHeight_percent="0.2"
+        android:adjustViewBounds="false"
+        android:scaleType="centerCrop"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/margin1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo"
+        app:layout_constraintBottom_toTopOf="@+id/text1_loginwait_page"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.04"
+        />
+
+    <TextView
+        android:id="@+id/text1_loginwait_page"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/login_page_text_small"
+        android:visibility="gone"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/loginpage_text"
+        android:textColor="@color/colorTextDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/margin1" />
+
+
+    <View
+        android:id="@+id/margin2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text1_loginwait_page"
+        app:layout_constraintBottom_toTopOf="@+id/tv_nome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.04"
+        />
+
+    <TextView
+        android:id="@+id/tv_nome"
+        android:layout_width="match_parent"
+        android:background="?attr/editTextBackground"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_page_inseri_fields_margin_side"
+        android:layout_marginEnd="@dimen/login_page_inseri_fields_margin_side"
+        android:backgroundTint="@color/colorText"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="start"
+        android:hint="@string/label_Nome"
+        android:lines="1"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textSize="@dimen/login_page_text_small"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/margin2" />
+
+    <View
+        android:id="@+id/margin3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nome"
+        app:layout_constraintBottom_toTopOf="@+id/tv_cognome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.035"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_cognome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/editTextBackground"
+        android:layout_marginStart="@dimen/login_page_inseri_fields_margin_side"
+        android:layout_marginEnd="@dimen/login_page_inseri_fields_margin_side"
+        android:backgroundTint="@color/colorText"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="start"
+        android:hint="@string/label_CogNome"
+        android:lines="1"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textSize="@dimen/login_page_text_small"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/margin3" />
+
+    <View
+        android:id="@+id/margin4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cognome"
+        app:layout_constraintBottom_toTopOf="@+id/tv_societa"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.035"
+        />
+
+
+    <TextView
+        android:id="@+id/tv_societa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_page_inseri_fields_margin_side"
+        android:layout_marginEnd="@dimen/login_page_inseri_fields_margin_side"
+        android:backgroundTint="@color/colorText"
+        android:background="?attr/editTextBackground"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="start"
+        android:hint="@string/label_Societa"
+        android:lines="1"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textSize="@dimen/login_page_text_small"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/margin4" />
+
+    <View
+        android:id="@+id/margin5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_societa"
+        app:layout_constraintBottom_toTopOf="@+id/tv_ruolo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.035"
+        />
+
+    <TextView
+        android:id="@+id/tv_ruolo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_page_inseri_fields_margin_side"
+        android:layout_marginEnd="@dimen/login_page_inseri_fields_margin_side"
+        android:backgroundTint="@color/colorText"
+        android:background="?attr/editTextBackground"
+        android:fontFamily="@font/montserrat_regular"
+        android:gravity="start"
+        android:hint="@string/label_Ruolo"
+        android:lines="1"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText"
+        android:textSize="@dimen/login_page_text_small"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/margin5" />
+
+    <View
+        android:id="@+id/margin6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ruolo"
+        app:layout_constraintBottom_toTopOf="@+id/bt_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.035"
+        />
+
+    <LinearLayout
+        android:id="@+id/bt_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/margin6">
+
+        <TextView
+            android:id="@+id/text2_loginwait_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/text2_login_wait_npage"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/login_page_text_small" />
+
+        <TextView
+            android:id="@+id/text3_loginwait_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/loginwait_page_text2_margin_top"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:paddingStart="@dimen/loginwait_page_text_padding"
+            android:paddingEnd="@dimen/loginwait_page_text_padding"
+            android:text="@string/text3_login_wait_npage"
+            android:textColor="@color/colorText"
+            android:textSize="@dimen/login_page_text_small" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

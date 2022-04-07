@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/drawable-hdpi/red_button_shape.xml" value="0.1" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/drawable-hdpi/shape_white_button.xml" value="0.12575250836120402" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/drawable/shape_unread_msg.xml" value="0.12575250836120402" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/drawable/shape_white_button.xml" value="0.8138528138528138" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout-land/activity_file_view.xml" value="0.11546184738955824" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout-port/activity_file_view.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity__noconfig_file_view.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity_file_view.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity_info.xml" value="0.3333333333333333" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity_login_wait.xml" value="0.14666666666666667" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity_main.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity_message_details.xml" value="0.16666666666666666" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/drawer_header.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/fragment_allegati_list.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/fragment_imageviewer.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/fragment_messages_list.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/fragment_pdfviewer.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/fragment_video_audio_player.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/item_allegati_read.xml" value="0.22" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/item_allegati_unread.xml" value="0.3333333333333333" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/item_file.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/item_file_new.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/item_message.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/item_msg_read.xml" value="0.3333333333333333" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/item_msg_unread.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/test.xml" value="0.4466666666666667" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/top_bar.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/top_bar_new.xml" value="0.22" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/top_bar_new_no_shadow.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Croce Rossa/app/src/main/res/layout/top_bar_settings.xml" value="0.11655405405405406" />
+        <entry key="..\:/Android Projects/E TEAM/Formatted code/Croce Rossa/app/src/main/res/layout/activity_login.xml" value="0.131640625" />
+        <entry key="..\:/Android Projects/E TEAM/Formatted code/Croce Rossa/app/src/main/res/layout/activity_login_wait.xml" value="0.131640625" />
+        <entry key="..\:/Android Projects/E TEAM/Formatted code/Croce Rossa/app/src/main/res/layout/activity_message_details.xml" value="0.131640625" />
+        <entry key="..\:/Android Projects/E TEAM/Formatted code/Croce Rossa/app/src/main/res/layout/activity_splash.xml" value="0.131640625" />
+        <entry key="..\:/Android Projects/E TEAM/Formatted code/Croce Rossa/app/src/main/res/layout/top_bar_new.xml" value="0.131640625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

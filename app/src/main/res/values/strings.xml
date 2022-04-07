@@ -1,0 +1,37 @@
+<resources>
+
+    <string name="header_text2">Comitato di Novara</string>
+
+
+
+
+
+    <string name="app_name">CRI Novara</string>
+    <string name="text2_login_wait_npage">L\'invio dei dati è avvenuto con successo</string>
+    <string name="text3_login_wait_npage">Riceverai una notifica di conferma appena \n potrai accedere all\'applicazione.</string>
+    <string name="label_Nome">Nome</string>
+    <string name="label_CogNome">Cognome</string>
+    <string name="label_Matricola">Matricola</string>
+    <string name="label_Invia">Invia</string>
+    <string name="label_apri">Apri</string>
+    <string name="ok">OK</string>
+    <string name="annula">Annulla</string>
+    <string name="fill_all_fields">Compila tutti i campi per procedere</string>
+    <string name="failed_try_again">Connessione al server fallita, riprova</string>
+    <!--<string name="please_try_again">" Please try again</string>-->
+    <string name="no_internet_connection">Connessione internet non disponibile</string>
+    <string name="failed_to_connect_server">L’app non riesce a connettersi al server, verifica la tua connessione e riprova.</string>
+    <string name="authentication_required">Autenticazione richiesta</string>
+    <string name="confirm_pattern_pin">Conferma la sequenza di blocco, il PIN, la password o l\'impronta digitale</string>
+    <string name="loading_failed">Caricamento del file fallito, riprova</string>
+    <string name="loginpage_text">Inserisci i tuoi dati\nper richiedere l\'accesso</string>
+    <string name="messaggi">MESSAGGI</string>
+    <string name="allegati">ALLEGATI</string>
+    <string name="impostazioni">IMPOSTAZIONI</string>
+    <string name="label_Ruolo">Ruolo</string>
+    <string name="label_Societa">Società</string>
+    <string name="label_darkmode">Modalità scura</string>
+    <string name="label_notification">Mostra notifiche</string>
+    <string name="label_passcode_lock">Codice di blocco</string>
+    <string name="label_email">Email</string>
+</resources>

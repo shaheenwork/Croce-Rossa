@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/message"
+        android:title="@string/messaggi"
+        android:icon="@drawable/messagi"/>
+    <item
+        android:id="@+id/allegatti"
+        android:title="@string/allegati"
+        android:iconTint="@color/colorAccent"
+        android:icon="@drawable/allegati"/>
+    <item
+        android:id="@+id/settings"
+        android:title="@string/impostazioni"
+        android:icon="@drawable/impostazioni"/>
+</menu>
