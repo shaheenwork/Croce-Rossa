@@ -16,6 +16,7 @@ public class PrefManager {
     private static final String COGNOME = "cognome";
     private static final String SOCIETA = "societa";
     private static final String RUOLO = "ruolo";
+    private static final String EMAIL = "email";
     private static final String SHOW_INFO_PAGE = "show_info_page";
 
     private static final String FCM_TOKEN = "fcm_token";
@@ -144,6 +145,14 @@ public class PrefManager {
         putString(RUOLO, ruolo);
     }
 
+
+    public String getMail() {
+        return prefs.getString(EMAIL, "");
+    }
+
+    public void setMail(String mail) {
+        putString(EMAIL, mail);
+    }
 
     public boolean showInfoPage() {
         return prefs.getBoolean(SHOW_INFO_PAGE, false);

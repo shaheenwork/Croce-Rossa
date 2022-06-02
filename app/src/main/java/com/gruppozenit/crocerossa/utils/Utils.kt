@@ -84,6 +84,7 @@ object Utils {
         prefManager.nome=""
         prefManager.societa=""
         prefManager.ruolo=""
+        prefManager.mail=""
         prefManager.cognome=""
     }
 

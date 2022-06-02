@@ -2,6 +2,7 @@ package com.gruppozenit.crocerossa.fcm
 
 import android.app.PendingIntent
 import android.content.Intent
+import android.os.Build
 import androidx.core.app.NotificationManagerCompat
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
@@ -17,15 +18,24 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     private var prefManager: PrefManager? = null
 
 
-
     override fun onMessageReceived(p0: RemoteMessage) {
         val (messagesListActivitypendingIntent, loginActivitypendingIntent, loginWaitActivityPendingIntent) = init()
 
-        manageNotifications(p0, messagesListActivitypendingIntent, loginWaitActivityPendingIntent, loginActivitypendingIntent)
+        manageNotifications(
+            p0,
+            messagesListActivitypendingIntent,
+            loginWaitActivityPendingIntent,
+            loginActivitypendingIntent
+        )
 
     }
 
-    private fun manageNotifications(remoteMessage: RemoteMessage?, messagesListActivitypendingIntent: PendingIntent, loginWaitActivityPendingIntent: PendingIntent, loginActivitypendingIntent: PendingIntent) {
+    private fun manageNotifications(
+        remoteMessage: RemoteMessage?,
+        messagesListActivitypendingIntent: PendingIntent,
+        loginWaitActivityPendingIntent: PendingIntent,
+        loginActivitypendingIntent: PendingIntent
+    ) {
         if (remoteMessage!!.data != null) {
 
             val title = remoteMessage.data.getValue("Title")
@@ -36,10 +46,18 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 Consts.NOTIF_NEW_MSG -> {
 
                     if (prefManager!!.notificationONorOFF) {
-                        val notificationBuilder = Utils.createNotificationBuilder(this, Consts.NEW_MSG_NOTIF_CHANNEL_ID, body!!, title!!)
+                        val notificationBuilder = Utils.createNotificationBuilder(
+                            this,
+                            Consts.NEW_MSG_NOTIF_CHANNEL_ID,
+                            body!!,
+                            title!!
+                        )
                         notificationBuilder.setContentIntent(messagesListActivitypendingIntent)
                         val notificationManager = NotificationManagerCompat.from(this)
-                        notificationManager.notify(Consts.NEW_MSG_NOTIF_ID, notificationBuilder.build())
+                        notificationManager.notify(
+                            Consts.NEW_MSG_NOTIF_ID,
+                            notificationBuilder.build()
+                        )
                     }
 
                     sendNewMessageBroadcast()
@@ -53,21 +71,39 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
                     when {
                         access.toInt() == Consts.ACCESS_APPROVED -> {
-                            prefManager!!.isLogin=true
+                            prefManager!!.isLogin = true
                             if (prefManager!!.notificationONorOFF) {
-                                val notificationBuilder = Utils.createNotificationBuilder(this, Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID, body!!, title!!)
-                                notificationBuilder.setContentIntent(messagesListActivitypendingIntent)
+                                val notificationBuilder = Utils.createNotificationBuilder(
+                                    this,
+                                    Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID,
+                                    body!!,
+                                    title!!
+                                )
+                                notificationBuilder.setContentIntent(
+                                    messagesListActivitypendingIntent
+                                )
                                 val notificationManager = NotificationManagerCompat.from(this)
-                                notificationManager.notify(Consts.ADMIN_APPROVAL_NOTIF_ID, notificationBuilder.build())
+                                notificationManager.notify(
+                                    Consts.ADMIN_APPROVAL_NOTIF_ID,
+                                    notificationBuilder.build()
+                                )
                             }
                         }
                         access.toInt() == Consts.ACCESS_PENDING -> {
-                            prefManager!!.isLogin=true
+                            prefManager!!.isLogin = true
                             if (prefManager!!.notificationONorOFF) {
-                                val notificationBuilder = Utils.createNotificationBuilder(this, Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID, body!!, title!!)
+                                val notificationBuilder = Utils.createNotificationBuilder(
+                                    this,
+                                    Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID,
+                                    body!!,
+                                    title!!
+                                )
                                 notificationBuilder.setContentIntent(loginWaitActivityPendingIntent)
                                 val notificationManager = NotificationManagerCompat.from(this)
-                                notificationManager.notify(Consts.ADMIN_APPROVAL_NOTIF_ID, notificationBuilder.build())
+                                notificationManager.notify(
+                                    Consts.ADMIN_APPROVAL_NOTIF_ID,
+                                    notificationBuilder.build()
+                                )
                             }
 
                         }
@@ -75,10 +111,18 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                             Utils.clearUserDetails(prefManager!!)
                             prefManager!!.setDeviceId(0)
                             if (prefManager!!.notificationONorOFF) {
-                                val notificationBuilder = Utils.createNotificationBuilder(this, Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID, body!!, title!!)
+                                val notificationBuilder = Utils.createNotificationBuilder(
+                                    this,
+                                    Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID,
+                                    body!!,
+                                    title!!
+                                )
                                 notificationBuilder.setContentIntent(loginActivitypendingIntent)
                                 val notificationManager = NotificationManagerCompat.from(this)
-                                notificationManager.notify(Consts.ADMIN_APPROVAL_NOTIF_ID, notificationBuilder.build())
+                                notificationManager.notify(
+                                    Consts.ADMIN_APPROVAL_NOTIF_ID,
+                                    notificationBuilder.build()
+                                )
                             }
 
                         }
@@ -93,10 +137,18 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                     Utils.clearUserDetails(prefManager!!)
                     prefManager!!.setDeviceId(0)
                     if (prefManager!!.notificationONorOFF) {
-                        val notificationBuilder = Utils.createNotificationBuilder(this, Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID, body!!, title!!)
+                        val notificationBuilder = Utils.createNotificationBuilder(
+                            this,
+                            Consts.ADMIN_APPROVAL_NOTIF_CHANNEL_ID,
+                            body!!,
+                            title!!
+                        )
                         notificationBuilder.setContentIntent(loginActivitypendingIntent)
                         val notificationManager = NotificationManagerCompat.from(this)
-                        notificationManager.notify(Consts.ADMIN_APPROVAL_NOTIF_ID, notificationBuilder.build())
+                        notificationManager.notify(
+                            Consts.ADMIN_APPROVAL_NOTIF_ID,
+                            notificationBuilder.build()
+                        )
                     }
 
                 }
@@ -107,13 +159,13 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 
 
-   /* private fun sendBroadcast(access: Int)
-    {
-        val intent = Intent()
-        intent.action = Consts.ACTION_ADMIN_STATUS
-        intent.putExtra(Consts.KEY_ACCESS, access)
-        sendBroadcast(intent)
-    }*/
+    /* private fun sendBroadcast(access: Int)
+     {
+         val intent = Intent()
+         intent.action = Consts.ACTION_ADMIN_STATUS
+         intent.putExtra(Consts.KEY_ACCESS, access)
+         sendBroadcast(intent)
+     }*/
 
 
     private fun sendAdminStatusBroadcast(access: Int) {
@@ -129,6 +181,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         }
 
     }
+
     private fun sendNewMessageBroadcast() {
         try {
             val broadCastIntent = Intent()
@@ -149,17 +202,63 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         val maintActivityIntent = Intent(this, MainActivity::class.java)
         val loginActivityIntent = Intent(this, LoginActivity::class.java)
         val loginWaitActivityIntent = Intent(this, LoginWaitActivity::class.java)
-        maintActivityIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-        loginActivityIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-        loginWaitActivityIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        maintActivityIntent.flags =
+            Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        loginActivityIntent.flags =
+            Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        loginWaitActivityIntent.flags =
+            Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
 
-        val messagesListActivitypendingIntent = PendingIntent.getActivity(this,
-                0, maintActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-        val loginActivitypendingIntent = PendingIntent.getActivity(this,
-                0, loginActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-        val loginWaitActivityPendingIntent = PendingIntent.getActivity(this,
-                0, loginWaitActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-        return Triple(messagesListActivitypendingIntent, loginActivitypendingIntent, loginWaitActivityPendingIntent)
+        val messagesListActivitypendingIntent =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                PendingIntent.getActivity(
+                    this,
+                    0,
+                    maintActivityIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+            } else {
+                PendingIntent.getActivity(
+                    this,
+                    0, maintActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT
+                )
+
+            }
+        val loginActivitypendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            PendingIntent.getActivity(
+                this,
+                0,
+                loginActivityIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+        } else {
+            PendingIntent.getActivity(
+                this,
+                0, loginActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT
+            )
+
+        }
+        val loginWaitActivityPendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            PendingIntent.getActivity(
+                this,
+                0,
+                loginWaitActivityIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+            )
+        } else {
+            PendingIntent.getActivity(
+                this,
+                0, loginWaitActivityIntent, PendingIntent.FLAG_UPDATE_CURRENT
+            )
+
+        }
+
+
+        return Triple(
+            messagesListActivitypendingIntent,
+            loginActivitypendingIntent,
+            loginWaitActivityPendingIntent
+        )
     }
 
     override fun onNewToken(token: String) {

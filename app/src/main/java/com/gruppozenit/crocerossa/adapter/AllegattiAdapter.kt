@@ -52,6 +52,8 @@ class AllegattiAdapter(private var item_model: MutableList<AttachmentList>,
                 holder.type_image.setImageResource(R.drawable.play)
             } else if (item_model[position].type == Consts.FILE_TYPE_AUDIO) {
                 holder.type_image.setImageResource(R.drawable.sound)
+            } else if (item_model[position].type == Consts.FILE_TYPE_LINK) {
+                holder.type_image.setImageResource(R.drawable.link)
             }
 
 

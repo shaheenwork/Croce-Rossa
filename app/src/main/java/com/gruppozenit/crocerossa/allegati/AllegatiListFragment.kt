@@ -1,13 +1,17 @@
 package com.gruppozenit.crocerossa.allegati
 
+import android.app.Activity
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.*
 import android.widget.Toast
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,10 +21,10 @@ import com.gruppozenit.crocerossa.R
 import com.gruppozenit.crocerossa.adapter.AllegattiAdapter
 import com.gruppozenit.crocerossa.fileView.FileViewActivity
 import com.gruppozenit.crocerossa.fileView.NoOrientationConfigChangeFileViewActivity
-import com.gruppozenit.crocerossa.login.LoginActivity
-import com.gruppozenit.crocerossa.login.LoginWaitActivity
 import com.gruppozenit.crocerossa.model.attachmentListModels.AttachmentList
 import com.gruppozenit.crocerossa.model.attachmentListModels.GetAttachmentListResponse
+import com.gruppozenit.crocerossa.model.attachmentStatusModels.AttachmentUpdateResponse
+import com.gruppozenit.crocerossa.model.attachmentStatusModels.UpdateAttachmentInput
 import com.gruppozenit.crocerossa.model.messageDetailsModels.MessageAttachment
 import com.gruppozenit.crocerossa.network.provider.RetrofitProvider
 import com.gruppozenit.crocerossa.utils.ConnectivityReceiver
@@ -101,12 +105,27 @@ class AllegatiListFragment : Fragment(), AllegattiAdapter.ItemClick, Connectivit
 
         if (Utils.isInternetAvailable(activity!!)) {
 
-            val file = MessageAttachment( item.messaggioDetailsID,item.filePath,item.title,item.type)
+            val file = MessageAttachment(item.messaggioDetailsID, item.filePath, item.title, item.type)
 
             if (item.type == Consts.FILE_TYPE_VIDEO || item.type == Consts.FILE_TYPE_AUDIO || item.type == Consts.FILE_TYPE_PDF) {
                 val intent = Intent(activity!!, NoOrientationConfigChangeFileViewActivity::class.java)
                 intent.putExtra(Consts.FILE, file)
                 startActivity(intent)
+            } else if (item.type == Consts.FILE_TYPE_LINK) {
+
+                updateReadStatusStatus(item.messaggioDetailsID)
+
+                val customIntent = CustomTabsIntent.Builder()
+
+                customIntent.setToolbarColor(ContextCompat.getColor(activity!!, R.color.colorPrimary))
+
+                if (!item.filePath.startsWith("http://") && !item.filePath.startsWith("https://")) {
+                    openCustomTab(activity!!, customIntent.build(), Uri.parse("http://" + item.filePath))
+                } else {
+                    openCustomTab(activity!!, customIntent.build(), Uri.parse(item.filePath))
+                }
+
+
             } else {
                 val intent = Intent(activity!!, FileViewActivity::class.java)
                 intent.putExtra(Consts.FILE, file)
@@ -115,6 +134,47 @@ class AllegatiListFragment : Fragment(), AllegattiAdapter.ItemClick, Connectivit
         }
 
     }
+
+    fun openCustomTab(activity: Activity, customTabsIntent: CustomTabsIntent, uri: Uri?) {
+        val packageName = "com.android.chrome"
+        if (packageName != null) {
+
+            customTabsIntent.intent.setPackage(packageName)
+
+            customTabsIntent.launchUrl(activity, uri!!)
+        } else {
+            activity.startActivity(Intent(Intent.ACTION_VIEW, uri))
+        }
+    }
+
+    private fun updateReadStatusStatus(messaggioDetailsID: Int) {
+
+        val api = RetrofitProvider.getInstance().retrofit!!.create(com.zenith.eteam.chronology.chronology1.network.api.Api::class.java)
+        val apiCall = api.mUpdateAttachmentReadStatus(prefManager!!.fcmToken, UpdateAttachmentInput(prefManager!!.deviceID, messaggioDetailsID))
+        apiCall.enqueue(object : Callback<AttachmentUpdateResponse> {
+            override fun onResponse(call: Call<AttachmentUpdateResponse>, response: Response<AttachmentUpdateResponse>) {
+
+
+                if (response.body()!!.result.success == true) {
+
+                    //
+
+                } else {
+
+                    //
+                }
+
+            }
+
+
+            override fun onFailure(call: Call<AttachmentUpdateResponse>, t: Throwable) {
+                Toast.makeText(activity, getString(R.string.failed_to_connect_server), Toast.LENGTH_SHORT).show()
+            }
+        })
+
+
+    }
+
 
     override fun onPause() {
 

@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@+id/text1_loginwait_page"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintHeight_percent="0.045"
        />
 
     <TextView
@@ -62,7 +62,7 @@
         app:layout_constraintBottom_toTopOf="@+id/et_nome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.04"
+        app:layout_constraintHeight_percent="0.045"
         />
 
     <EditText
@@ -94,7 +94,7 @@
         app:layout_constraintBottom_toTopOf="@+id/et_cognome"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.035"
+        app:layout_constraintHeight_percent="0.04"
         />
 
 
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toTopOf="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.035"
+        app:layout_constraintHeight_percent="0.04"
         />
 
 
@@ -160,6 +160,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_societa"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layout_constraintHeight_percent="0.035"
         />
 
@@ -172,6 +173,7 @@
         android:layout_marginStart="@dimen/login_page_inseri_fields_margin_side"
         android:backgroundTint="@color/colorText"
         android:layout_marginEnd="@dimen/login_page_inseri_fields_margin_side"
+        android:visibility="gone"
         android:fontFamily="@font/montserrat_regular"
         android:gravity="start"
         android:hint="@string/label_Societa"
@@ -195,6 +197,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tv_ruolo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layout_constraintHeight_percent="0.035"
         />
 
@@ -217,6 +220,7 @@
         android:textColorHint="@color/colorText"
         android:textCursorDrawable="@drawable/color_cursor"
         android:textSize="@dimen/login_page_text_small"
+        android:visibility="gone"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/margin6" />
@@ -229,7 +233,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintHeight_percent="0.035"
+        app:layout_constraintHeight_percent="0.04"
         />
 
     <Button

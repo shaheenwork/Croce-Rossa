@@ -46,6 +46,7 @@ class LoginWaitActivity : AppCompatActivity() {
         prefManager = PrefManager.getInstance(this)
         receiver = AdminStatusBroadCastReceiver()
         tv_nome.text = prefManager!!.nome
+        tv_mail.text = prefManager!!.mail
         tv_cognome.text = prefManager!!.cognome
         tv_societa.text = prefManager!!.societa
         tv_ruolo.text = prefManager!!.ruolo

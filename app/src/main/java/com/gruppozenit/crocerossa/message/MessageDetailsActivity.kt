@@ -1,9 +1,11 @@
 package com.gruppozenit.crocerossa.message
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.Spannable
@@ -19,13 +21,15 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
+import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gruppozenit.crocerossa.R
 import com.gruppozenit.crocerossa.adapter.FilesAdapter
 import com.gruppozenit.crocerossa.fileView.FileViewActivity
 import com.gruppozenit.crocerossa.fileView.NoOrientationConfigChangeFileViewActivity
+import com.gruppozenit.crocerossa.model.attachmentStatusModels.AttachmentUpdateResponse
+import com.gruppozenit.crocerossa.model.attachmentStatusModels.UpdateAttachmentInput
 import com.gruppozenit.crocerossa.model.messageDetailsModels.GetMessageDetailsInput
 import com.gruppozenit.crocerossa.model.messageDetailsModels.GetMessageDetailsResponse
 import com.gruppozenit.crocerossa.model.messageDetailsModels.MessageAttachment
@@ -83,7 +87,7 @@ class MessageDetailsActivity : AppCompatActivity(), FilesAdapter.ItemClick, View
 
                 if (response.body() != null) {
 
-                    mainscroll.visibility=View.VISIBLE
+                    mainscroll.visibility = View.VISIBLE
                     hideProgressDialog()
 
                     if (response.body()!!.result.success == true) {
@@ -102,13 +106,13 @@ class MessageDetailsActivity : AppCompatActivity(), FilesAdapter.ItemClick, View
                                     .into(profile_image)
 
 
-                            val bold = Typeface.createFromAsset(assets,"montserrat_semibold.ttf")
+                            val bold = Typeface.createFromAsset(assets, "montserrat_semibold.ttf")
 
                             val b: TypefaceSpan = CustomTypefaceSpan("", bold)
 
 
-                            if(response.body()!!.result.data.messageDetailsList.titolo == null){
-                                response.body()!!.result.data.messageDetailsList.titolo=""
+                            if (response.body()!!.result.data.messageDetailsList.titolo == null) {
+                                response.body()!!.result.data.messageDetailsList.titolo = ""
                             }
 
                             val msg = SpannableString(response.body()!!.result.data.messageDetailsList.titolo + "\n\n" + response.body()!!.result.data.messageDetailsList.testo)
@@ -210,11 +214,67 @@ class MessageDetailsActivity : AppCompatActivity(), FilesAdapter.ItemClick, View
                 val intent = Intent(this@MessageDetailsActivity, NoOrientationConfigChangeFileViewActivity::class.java)
                 intent.putExtra(Consts.FILE, item)
                 startActivity(intent)
+            } else if (item.type == Consts.FILE_TYPE_LINK) {
+
+                updateReadStatusStatus(item.messaggioDetailsID)
+
+                val customIntent = CustomTabsIntent.Builder()
+
+                customIntent.setToolbarColor(ContextCompat.getColor(this, R.color.colorPrimary))
+
+                if (!item.filePath.startsWith("http://") && !item.filePath.startsWith("https://")) {
+                    openCustomTab(this, customIntent.build(), Uri.parse("http://" + item.filePath))
+                } else {
+                    openCustomTab(this, customIntent.build(), Uri.parse(item.filePath))
+                }
+
+
             } else {
                 val intent = Intent(this@MessageDetailsActivity, FileViewActivity::class.java)
                 intent.putExtra(Consts.FILE, item)
                 startActivity(intent)
             }
+        }
+    }
+
+    private fun updateReadStatusStatus(messaggioDetailsID: Int) {
+
+        val api = RetrofitProvider.getInstance().retrofit!!.create(com.zenith.eteam.chronology.chronology1.network.api.Api::class.java)
+        val apiCall = api.mUpdateAttachmentReadStatus(prefManager!!.fcmToken, UpdateAttachmentInput(prefManager!!.deviceID, messaggioDetailsID))
+        apiCall.enqueue(object : Callback<AttachmentUpdateResponse> {
+            override fun onResponse(call: Call<AttachmentUpdateResponse>, response: Response<AttachmentUpdateResponse>) {
+
+
+                if (response.body()!!.result.success == true) {
+
+                    //
+
+                } else {
+
+                    //
+                }
+
+            }
+
+
+            override fun onFailure(call: Call<AttachmentUpdateResponse>, t: Throwable) {
+                Toast.makeText(this@MessageDetailsActivity, getString(R.string.failed_to_connect_server), Toast.LENGTH_SHORT).show()
+            }
+        })
+
+
+    }
+
+
+    fun openCustomTab(activity: Activity, customTabsIntent: CustomTabsIntent, uri: Uri?) {
+        val packageName = "com.android.chrome"
+        if (packageName != null) {
+
+            customTabsIntent.intent.setPackage(packageName)
+
+            customTabsIntent.launchUrl(activity, uri!!)
+        } else {
+            activity.startActivity(Intent(Intent.ACTION_VIEW, uri))
         }
     }
 

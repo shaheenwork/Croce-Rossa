@@ -22,6 +22,7 @@ interface Consts {
         val FILE_TYPE_IMAGE = 1
         val FILE_TYPE_VIDEO = 3
         val FILE_TYPE_AUDIO = 2
+        val FILE_TYPE_LINK = 4
 
 
 

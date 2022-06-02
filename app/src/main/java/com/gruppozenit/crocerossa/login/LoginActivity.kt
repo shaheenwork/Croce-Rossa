@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         generateFcmToken()
 
         if (Utils.isInternetAvailable(this@LoginActivity)) {
-            mGetSocietaAndRuoloList()
+          //  mGetSocietaAndRuoloList()
         }
 
 
@@ -219,8 +219,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         deviceRegInput!!.cognome = et_cognome!!.text.toString().trim()
         deviceRegInput!!.deviceToken = prefManager!!.fcmToken
         deviceRegInput!!.deviceID = prefManager!!.deviceID
-        deviceRegInput!!.societa_Id = selected_societa_id!!.toInt()
-        deviceRegInput!!.ruolo_Id = selected_ruolo_id!!.toInt()
+       // deviceRegInput!!.societa_Id = selected_societa_id!!.toInt()
+       // deviceRegInput!!.ruolo_Id = selected_ruolo_id!!.toInt()
         deviceRegInput!!.email = et_email!!.text.toString().trim()
     }
 
@@ -252,6 +252,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         prefManager!!.nome = deviceRegInput!!.nome
         prefManager!!.cognome = deviceRegInput!!.cognome
+        prefManager!!.mail = deviceRegInput!!.email
         prefManager!!.societa = selected_societa_name
         prefManager!!.ruolo = selected_ruolo_name
         prefManager!!.isLogin = true
@@ -327,8 +328,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         if (view == btn_login) {
             if (TextUtils.isEmpty(et_nome!!.text.toString()) || TextUtils.isEmpty(et_cognome!!.text.toString()) || TextUtils.isEmpty(
-                    et_email!!.text.toString()
-                ) || selected_societa_id == null || selected_ruolo_id == null
+                    et_email!!.text.toString())
+                //) || selected_societa_id == null || selected_ruolo_id == null
             ) {
                 Toast.makeText(
                     LoginActivity@ this,

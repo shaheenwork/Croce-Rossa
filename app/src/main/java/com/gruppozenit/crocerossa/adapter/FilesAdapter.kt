@@ -52,6 +52,9 @@ class FilesAdapter(private var item_model: MutableList<MessageAttachment>,
             } else if (item_model[position].type == Consts.FILE_TYPE_AUDIO) {
                 holder.file_type.setImageResource(R.drawable.sound)
                 holder.fileName.text = "Apri Audio"
+            } else if (item_model[position].type == Consts.FILE_TYPE_LINK) {
+                holder.file_type.setImageResource(R.drawable.link)
+                holder.fileName.text = "Apri Link"
             }
 
 
